@@ -8,10 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0187C9C309849B7D8CDF8351 /* Pods_WannaBeGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277944D67FBF861B1BB15022 /* Pods_WannaBeGram.framework */; };
+		A853FCFC2217D73700B02EF2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FCFB2217D73700B02EF2 /* HomeViewController.swift */; };
+		A853FD002217E79300B02EF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A853FCFF2217E79300B02EF2 /* Assets.xcassets */; };
+		A853FD022217E9DD00B02EF2 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD012217E9DD00B02EF2 /* PostHeaderCell.swift */; };
+		A853FD042217EAAD00B02EF2 /* PostContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD032217EAAD00B02EF2 /* PostContentCell.swift */; };
+		A853FD062217ECFE00B02EF2 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD052217ECFE00B02EF2 /* PostActionCell.swift */; };
+		A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFF82219C71700941E9D /* WBGButton.swift */; };
+		A8A4FFFB2219C85000941E9D /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */; };
+		A8A4FFFD2219C86300941E9D /* CreateCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */; };
+		A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */; };
+		A8FDEE9A2217BAD900D5CB86 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE992217BAD900D5CB86 /* UserService.swift */; };
+		A8FDEE9C2217BD0A00D5CB86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE9B2217BD0A00D5CB86 /* User.swift */; };
+		A8FDEE9E2217C5BB00D5CB86 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE9D2217C5BB00D5CB86 /* CreateUserViewController.swift */; };
 		A8FE808322123DDF00A17BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE808222123DDF00A17BDB /* AppDelegate.swift */; };
 		A8FE808522123DDF00A17BDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE808422123DDF00A17BDB /* ViewController.swift */; };
 		A8FE808822123DDF00A17BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FE808622123DDF00A17BDB /* Main.storyboard */; };
-		A8FE808A22123DE000A17BDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FE808922123DE000A17BDB /* Assets.xcassets */; };
 		A8FE808D22123DE000A17BDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FE808B22123DE000A17BDB /* LaunchScreen.storyboard */; };
 		A8FE809522123E1F00A17BDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8FE809422123E1F00A17BDB /* GoogleService-Info.plist */; };
 		A8FE8097221241E200A17BDB /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE8096221241E200A17BDB /* Storyboard+Utility.swift */; };
@@ -24,11 +35,22 @@
 /* Begin PBXFileReference section */
 		277944D67FBF861B1BB15022 /* Pods_WannaBeGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaBeGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C91AAFDDCD42E899E318F5 /* Pods-WannaBeGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBeGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBeGram/Pods-WannaBeGram.release.xcconfig"; sourceTree = "<group>"; };
+		A853FCFB2217D73700B02EF2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A853FCFF2217E79300B02EF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A853FD012217E9DD00B02EF2 /* PostHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
+		A853FD032217EAAD00B02EF2 /* PostContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentCell.swift; sourceTree = "<group>"; };
+		A853FD052217ECFE00B02EF2 /* PostActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
+		A8A4FFF82219C71700941E9D /* WBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBGButton.swift; sourceTree = "<group>"; };
+		A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaptionViewController.swift; sourceTree = "<group>"; };
+		A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerHelper.swift; sourceTree = "<group>"; };
+		A8FDEE992217BAD900D5CB86 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A8FDEE9B2217BD0A00D5CB86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8FDEE9D2217C5BB00D5CB86 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		A8FE807F22123DDF00A17BDB /* WannaBeGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBeGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FE808222123DDF00A17BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8FE808422123DDF00A17BDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8FE808722123DDF00A17BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A8FE808922123DE000A17BDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8FE808C22123DE000A17BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8FE808E22123DE000A17BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8FE809422123E1F00A17BDB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -61,6 +83,81 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A8A400002219C8E400941E9D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A8FDEE992217BAD900D5CB86 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A8A400012219C8EF00941E9D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A8FE8096221241E200A17BDB /* Storyboard+Utility.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A8A400022219C90500941E9D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8FE8098221242AE00A17BDB /* Constants.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8A400032219C90D00941E9D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A8A400042219C91800941E9D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A8FE808B22123DE000A17BDB /* LaunchScreen.storyboard */,
+				A8FE809A2212434E00A17BDB /* Login.storyboard */,
+				A8FE808622123DDF00A17BDB /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A8A400052219C92100941E9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8FDEE9B2217BD0A00D5CB86 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8A4FFFE2219C8C300941E9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A8FE809E221245F100A17BDB /* GradientView.swift */,
+				A8A4FFF82219C71700941E9D /* WBGButton.swift */,
+				A853FD052217ECFE00B02EF2 /* PostActionCell.swift */,
+				A853FD012217E9DD00B02EF2 /* PostHeaderCell.swift */,
+				A853FD032217EAAD00B02EF2 /* PostContentCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A8A4FFFF2219C8D900941E9D /* VIewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A853FCFB2217D73700B02EF2 /* HomeViewController.swift */,
+				A8FDEE9D2217C5BB00D5CB86 /* CreateUserViewController.swift */,
+				A8FE809C2212436400A17BDB /* LoginViewController.swift */,
+				A8FE808422123DDF00A17BDB /* ViewController.swift */,
+				A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */,
+				A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */,
+			);
+			path = VIewControllers;
+			sourceTree = "<group>";
+		};
 		A8FE807622123DDF00A17BDB = {
 			isa = PBXGroup;
 			children = (
@@ -82,16 +179,16 @@
 		A8FE808122123DDF00A17BDB /* WannaBeGram */ = {
 			isa = PBXGroup;
 			children = (
+				A8A400052219C92100941E9D /* Models */,
 				A8FE808222123DDF00A17BDB /* AppDelegate.swift */,
-				A8FE809A2212434E00A17BDB /* Login.storyboard */,
-				A8FE809C2212436400A17BDB /* LoginViewController.swift */,
-				A8FE809E221245F100A17BDB /* GradientView.swift */,
-				A8FE8098221242AE00A17BDB /* Constants.swift */,
-				A8FE808422123DDF00A17BDB /* ViewController.swift */,
-				A8FE808622123DDF00A17BDB /* Main.storyboard */,
-				A8FE8096221241E200A17BDB /* Storyboard+Utility.swift */,
-				A8FE808922123DE000A17BDB /* Assets.xcassets */,
-				A8FE808B22123DE000A17BDB /* LaunchScreen.storyboard */,
+				A8A400042219C91800941E9D /* Storyboards */,
+				A8A4FFFF2219C8D900941E9D /* VIewControllers */,
+				A8A400032219C90D00941E9D /* Helpers */,
+				A8A400002219C8E400941E9D /* Services */,
+				A8A400022219C90500941E9D /* Supporting Files */,
+				A8A4FFFE2219C8C300941E9D /* Views */,
+				A8A400012219C8EF00941E9D /* Extensions */,
+				A853FCFF2217E79300B02EF2 /* Assets.xcassets */,
 				A8FE808E22123DE000A17BDB /* Info.plist */,
 				A8FE809422123E1F00A17BDB /* GoogleService-Info.plist */,
 			);
@@ -168,9 +265,9 @@
 			files = (
 				A8FE808D22123DE000A17BDB /* LaunchScreen.storyboard in Resources */,
 				A8FE809522123E1F00A17BDB /* GoogleService-Info.plist in Resources */,
-				A8FE808A22123DE000A17BDB /* Assets.xcassets in Resources */,
 				A8FE809B2212434E00A17BDB /* Login.storyboard in Resources */,
 				A8FE808822123DDF00A17BDB /* Main.storyboard in Resources */,
+				A853FD002217E79300B02EF2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,12 +331,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FDEE9A2217BAD900D5CB86 /* UserService.swift in Sources */,
+				A8FDEE9E2217C5BB00D5CB86 /* CreateUserViewController.swift in Sources */,
+				A8A4FFFB2219C85000941E9D /* CreatePostViewController.swift in Sources */,
 				A8FE8097221241E200A17BDB /* Storyboard+Utility.swift in Sources */,
 				A8FE808522123DDF00A17BDB /* ViewController.swift in Sources */,
+				A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */,
 				A8FE809F221245F100A17BDB /* GradientView.swift in Sources */,
 				A8FE808322123DDF00A17BDB /* AppDelegate.swift in Sources */,
+				A853FCFC2217D73700B02EF2 /* HomeViewController.swift in Sources */,
 				A8FE809D2212436400A17BDB /* LoginViewController.swift in Sources */,
+				A853FD042217EAAD00B02EF2 /* PostContentCell.swift in Sources */,
+				A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */,
+				A8FDEE9C2217BD0A00D5CB86 /* User.swift in Sources */,
+				A853FD022217E9DD00B02EF2 /* PostHeaderCell.swift in Sources */,
+				A8A4FFFD2219C86300941E9D /* CreateCaptionViewController.swift in Sources */,
 				A8FE8099221242AE00A17BDB /* Constants.swift in Sources */,
+				A853FD062217ECFE00B02EF2 /* PostActionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +494,7 @@
 			baseConfigurationReference = D0F4B66DE8BA0E3409DBC830 /* Pods-WannaBeGram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZNW8WQ3KY9;
 				INFOPLIST_FILE = WannaBeGram/Info.plist;
@@ -405,6 +514,7 @@
 			baseConfigurationReference = 57C91AAFDDCD42E899E318F5 /* Pods-WannaBeGram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZNW8WQ3KY9;
 				INFOPLIST_FILE = WannaBeGram/Info.plist;

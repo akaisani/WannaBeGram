@@ -50,9 +50,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func configureInitialRootViewController(for window: UIWindow?) {
+        let defaults = UserDefaults.standard
         let initialViewController: UIViewController
         
-        initialViewController = UIStoryboard.initialViewController(for: .login)
+        if let _ = Auth.auth().currentUser,
+            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+            let user = try? JSONDecoder().decode(User.self, from: userData) {
+            User.setCurrent(user)
+            initialViewController = UIStoryboard.initialViewController(for: .main)
+        } else {
+            initialViewController = UIStoryboard.initialViewController(for: .login)
+        }
         
         window?.rootViewController = initialViewController
         window?.makeKeyAndVisible()

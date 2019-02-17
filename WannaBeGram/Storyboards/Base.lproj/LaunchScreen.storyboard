@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="oBz-JY-IOa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WannaBeGram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV9-Uz-f1H">
+                                <rect key="frame" x="16" y="279" width="343" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="109" id="41O-HT-HHA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="bQc-vq-Wak"/>
+                                    <constraint firstAttribute="width" constant="343" id="ffP-rU-8aH"/>
+                                    <constraint firstAttribute="height" constant="109" id="ijd-26-DkC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="109" id="nHa-kz-fnl"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="343" id="yoZ-OT-Uv5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_heart" translatesAutoresizingMaskIntoConstraints="NO" id="NzI-8u-BEt">
+                                <rect key="frame" x="138" y="396" width="99" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="FnN-Ar-csT"/>
+                                    <constraint firstAttribute="width" constant="99" id="hmg-cr-HFX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NzI-8u-BEt" firstAttribute="top" secondItem="ZV9-Uz-f1H" secondAttribute="bottom" constant="8" id="DqB-mJ-AEb"/>
+                            <constraint firstItem="oBz-JY-IOa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M7p-4e-T3P"/>
+                            <constraint firstItem="NzI-8u-BEt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="R9I-Cz-lsq"/>
+                            <constraint firstItem="oBz-JY-IOa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ehL-MS-0eW"/>
+                            <constraint firstItem="oBz-JY-IOa" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="hpM-pv-4GU"/>
+                            <constraint firstItem="ZV9-Uz-f1H" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="p9G-ir-O2g"/>
+                            <constraint firstAttribute="bottom" secondItem="oBz-JY-IOa" secondAttribute="bottom" id="pWt-aR-k7q"/>
+                            <constraint firstItem="ZV9-Uz-f1H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zN0-1k-tC4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch_heart" width="72" height="72"/>
+        <image name="loginBackgroundImage" width="1440" height="900"/>
+    </resources>
+</document>
