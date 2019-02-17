@@ -10,13 +10,22 @@ import UIKit
 
 class CreateCaptionViewController: UIViewController {
 
+    
+    @IBOutlet weak var captionField: UITextField!
+    @IBOutlet weak var capturedImageView: UIImageView!
+    var image: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
-
+    @IBAction func postButtonPressed(_ sender: UIButton) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

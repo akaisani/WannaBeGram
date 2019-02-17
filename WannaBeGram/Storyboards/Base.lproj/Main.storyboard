@@ -136,6 +136,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="1DT-gh-YBQ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="X4M-mq-Jr5"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,25 +157,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1518" y="581"/>
-        </scene>
-        <!--Create-->
-        <scene sceneID="crG-Fx-9gi">
-            <objects>
-                <viewController id="wSL-uA-YDy" customClass="CreatePostViewController" customModule="WannaBeGram" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="18z-nn-2bD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="LGg-Fm-OB2"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Create" id="8TP-CU-MqO"/>
-                    <connections>
-                        <segue destination="Lkd-Gf-qaW" kind="show" identifier="toCreateCaption" id="GMJ-cB-4Tm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iZM-rp-Fmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="225" y="581"/>
         </scene>
         <!--Create Caption View Controller-->
         <scene sceneID="16Q-c3-W9c">
@@ -210,6 +195,9 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="iBC-77-8GB"/>
                                         </constraints>
                                         <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="postButtonPressed:" destination="Lkd-Gf-qaW" eventType="touchUpInside" id="AL8-Gq-88h"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -228,6 +216,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7ya-E1-Ims"/>
                     </view>
+                    <connections>
+                        <outlet property="captionField" destination="WS7-iR-rA0" id="Y8d-vf-6q9"/>
+                        <outlet property="capturedImageView" destination="fZV-is-HeH" id="gN5-b1-wyb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycg-ES-IbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,7 +237,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="sWP-Rh-oXc"/>
-                        <segue destination="wSL-uA-YDy" kind="relationship" relationship="viewControllers" id="pao-7n-eZ1"/>
+                        <segue destination="M6P-go-hah" kind="relationship" relationship="viewControllers" id="YNn-R5-w5F"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNf-v0-lIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,8 +264,64 @@
             </objects>
             <point key="canvasLocation" x="-538" y="-934"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="ZyJ-DW-8PJ">
+            <objects>
+                <viewController id="M6P-go-hah" customClass="CreatePostViewController" customModule="WannaBeGram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qSJ-hc-Zhj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="slk-SQ-lkU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WannaBeGram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-vQ-4Md">
+                                <rect key="frame" x="16" y="279" width="343" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="109" id="8Re-cv-jBT"/>
+                                    <constraint firstAttribute="width" constant="343" id="JRg-y3-d1l"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="343" id="Kes-BH-CEF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="TBr-s0-F4V"/>
+                                    <constraint firstAttribute="height" constant="109" id="aQq-dI-UIa"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="109" id="ifX-v2-g3V"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_heart" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-O7-BWH">
+                                <rect key="frame" x="138" y="396" width="99" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="gJ3-vz-Y3E"/>
+                                    <constraint firstAttribute="width" constant="99" id="ztB-3o-vIe"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="slk-SQ-lkU" secondAttribute="bottom" id="4bi-vK-4BZ"/>
+                            <constraint firstItem="ahC-O7-BWH" firstAttribute="top" secondItem="DW4-vQ-4Md" secondAttribute="bottom" constant="8" id="7sp-5A-pcs"/>
+                            <constraint firstItem="slk-SQ-lkU" firstAttribute="leading" secondItem="h0j-bP-s2O" secondAttribute="leading" id="Jjt-ct-KEa"/>
+                            <constraint firstItem="DW4-vQ-4Md" firstAttribute="centerY" secondItem="qSJ-hc-Zhj" secondAttribute="centerY" id="VPR-H2-4bL"/>
+                            <constraint firstItem="DW4-vQ-4Md" firstAttribute="centerX" secondItem="qSJ-hc-Zhj" secondAttribute="centerX" id="ZkW-J9-5sB"/>
+                            <constraint firstItem="slk-SQ-lkU" firstAttribute="trailing" secondItem="h0j-bP-s2O" secondAttribute="trailing" id="di3-DL-DwY"/>
+                            <constraint firstItem="ahC-O7-BWH" firstAttribute="centerX" secondItem="qSJ-hc-Zhj" secondAttribute="centerX" id="oog-hD-fru"/>
+                            <constraint firstItem="slk-SQ-lkU" firstAttribute="top" secondItem="qSJ-hc-Zhj" secondAttribute="top" id="xt2-pl-RvF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h0j-bP-s2O"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Wmt-s6-DDt"/>
+                    <connections>
+                        <segue destination="Lkd-Gf-qaW" kind="show" identifier="toCaptionView" id="eHE-Rj-K2G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dJL-HU-g4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="590"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="launch_heart" width="72" height="72"/>
         <image name="loginBackgroundImage" width="1440" height="900"/>
         <image name="post_like" width="36" height="36"/>
         <image name="post_options" width="48" height="48"/>

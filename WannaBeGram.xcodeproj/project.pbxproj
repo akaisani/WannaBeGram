@@ -13,6 +13,7 @@
 		A853FD022217E9DD00B02EF2 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD012217E9DD00B02EF2 /* PostHeaderCell.swift */; };
 		A853FD042217EAAD00B02EF2 /* PostContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD032217EAAD00B02EF2 /* PostContentCell.swift */; };
 		A853FD062217ECFE00B02EF2 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD052217ECFE00B02EF2 /* PostActionCell.swift */; };
+		A8A40007221A1D6200941E9D /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40006221A1D6200941E9D /* PhotoHelper.swift */; };
 		A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFF82219C71700941E9D /* WBGButton.swift */; };
 		A8A4FFFB2219C85000941E9D /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */; };
 		A8A4FFFD2219C86300941E9D /* CreateCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */; };
@@ -40,6 +41,7 @@
 		A853FD012217E9DD00B02EF2 /* PostHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
 		A853FD032217EAAD00B02EF2 /* PostContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentCell.swift; sourceTree = "<group>"; };
 		A853FD052217ECFE00B02EF2 /* PostActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
+		A8A40006221A1D6200941E9D /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		A8A4FFF82219C71700941E9D /* WBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBGButton.swift; sourceTree = "<group>"; };
 		A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaptionViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		A8A400032219C90D00941E9D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A8A40006221A1D6200941E9D /* PhotoHelper.swift */,
 				A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */,
 			);
 			path = Helpers;
@@ -338,6 +341,7 @@
 				A8FE808522123DDF00A17BDB /* ViewController.swift in Sources */,
 				A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */,
 				A8FE809F221245F100A17BDB /* GradientView.swift in Sources */,
+				A8A40007221A1D6200941E9D /* PhotoHelper.swift in Sources */,
 				A8FE808322123DDF00A17BDB /* AppDelegate.swift in Sources */,
 				A853FCFC2217D73700B02EF2 /* HomeViewController.swift in Sources */,
 				A8FE809D2212436400A17BDB /* LoginViewController.swift in Sources */,
