@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print()
@@ -27,4 +30,40 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = posts[indexPath.row]
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "postHeaderCell", for: indexPath) as! PostHeaderCell
+            cell.usernameLabel.text = post.poster.username
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "postContentCell", for: indexPath) as! PostContentCell
+            cell.postImageView.image = post.image
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "postActionCell", for: indexPath) as! PostActionCell
+            //TODO: add code for like button
+            //TODO: add code for date and like count
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
 }

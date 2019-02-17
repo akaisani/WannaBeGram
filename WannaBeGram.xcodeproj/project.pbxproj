@@ -14,6 +14,7 @@
 		A853FD042217EAAD00B02EF2 /* PostContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD032217EAAD00B02EF2 /* PostContentCell.swift */; };
 		A853FD062217ECFE00B02EF2 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD052217ECFE00B02EF2 /* PostActionCell.swift */; };
 		A8A40007221A1D6200941E9D /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40006221A1D6200941E9D /* PhotoHelper.swift */; };
+		A8A40009221A280100941E9D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40008221A280100941E9D /* Post.swift */; };
 		A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFF82219C71700941E9D /* WBGButton.swift */; };
 		A8A4FFFB2219C85000941E9D /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */; };
 		A8A4FFFD2219C86300941E9D /* CreateCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */; };
@@ -42,6 +43,7 @@
 		A853FD032217EAAD00B02EF2 /* PostContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostContentCell.swift; sourceTree = "<group>"; };
 		A853FD052217ECFE00B02EF2 /* PostActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
 		A8A40006221A1D6200941E9D /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
+		A8A40008221A280100941E9D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A8A4FFF82219C71700941E9D /* WBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBGButton.swift; sourceTree = "<group>"; };
 		A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaptionViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		A8A400052219C92100941E9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8A40008221A280100941E9D /* Post.swift */,
 				A8FDEE9B2217BD0A00D5CB86 /* User.swift */,
 			);
 			path = Models;
@@ -350,6 +353,7 @@
 				A8FDEE9C2217BD0A00D5CB86 /* User.swift in Sources */,
 				A853FD022217E9DD00B02EF2 /* PostHeaderCell.swift in Sources */,
 				A8A4FFFD2219C86300941E9D /* CreateCaptionViewController.swift in Sources */,
+				A8A40009221A280100941E9D /* Post.swift in Sources */,
 				A8FE8099221242AE00A17BDB /* Constants.swift in Sources */,
 				A853FD062217ECFE00B02EF2 /* PostActionCell.swift in Sources */,
 			);
