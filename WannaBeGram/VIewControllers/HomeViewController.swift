@@ -51,14 +51,13 @@ extension HomeViewController: UITableViewDataSource {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postContentCell", for: indexPath) as! PostContentCell
             cell.postImageView.image = post.image
-        case 2:
+        default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postActionCell", for: indexPath) as! PostActionCell
             //TODO: add code for like button
             //TODO: add code for date and like count
             return cell
-        default:
-            return UITableViewCell()
         }
+        return UITableViewCell()
     }
     
     

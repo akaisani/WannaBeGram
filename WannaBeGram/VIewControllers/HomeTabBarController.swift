@@ -1,5 +1,5 @@
 //
-//  CreatePostViewController.swift
+//  HomeTabBarController.swift
 //  WannaBeGram
 //
 //  Created by Abid Amirali on 2/17/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController {
+class HomeTabBarController: UITabBarController {
 
     let photoHelper = PhotoHelper()
     
@@ -16,24 +16,21 @@ class CreatePostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
-        
-        photoHelper.completionHandler = {(UIImage) in
-            self.performSegue(withIdentifier: "toCaptionView", sender: self)
-            
+        self.delegate = self
+        photoHelper.completionHandler = {(image) in
+            self.capturedImage = image
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toCaptionView", sender: self)
+            }
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        photoHelper.show(for: self)
-    }
-    
 
-    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -46,9 +43,18 @@ class CreatePostViewController: UIViewController {
         }
         
     }
-    
-    
-    
-    
+
+}
+
+extension HomeTabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print(viewController.tabBarItem.tag)
+        if viewController.tabBarItem.tag == 1 {
+            photoHelper.show(for: self)
+            return false
+        } else {
+            return true
+        }
+    }
 
 }

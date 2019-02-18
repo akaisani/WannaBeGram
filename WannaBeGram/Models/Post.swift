@@ -35,7 +35,7 @@ class Post {
         let data = try! Data(contentsOf: url)
         let image = UIImage(data: data)
         cachedImage = image
-        return image
+        return cachedImage!
     }
     
 }

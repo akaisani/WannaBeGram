@@ -13,12 +13,12 @@ class PhotoHelper: NSObject {
     var completionHandler: ((UIImage) -> Void)?
     
     func show(for viewController: UIViewController) {
-        let alertController = UIAlertController(title: "Select a method to take an image", message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Select a method to take an image", message: "", preferredStyle: .actionSheet)
         
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
-                // TODO add camera stuff
+                self.presentImagePicker(from: viewController, of: .camera)
             }
             alertController.addAction(cameraAction)
         }
@@ -26,7 +26,7 @@ class PhotoHelper: NSObject {
             
             
             let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
-                // TODO add camera stuff
+                self.presentImagePicker(from: viewController, of: .photoLibrary)
             }
             alertController.addAction(libraryAction)
         }
@@ -36,7 +36,7 @@ class PhotoHelper: NSObject {
         }
         alertController.addAction(cancelAction)
         
-        viewController.present(viewController, animated: true, completion: nil)
+        viewController.present(alertController, animated: true, completion: nil)
     }
     
     
@@ -45,7 +45,7 @@ class PhotoHelper: NSObject {
         imagePicker.sourceType = type
         imagePicker.delegate = self
         
-        viewcontroller.present(viewcontroller, animated: true, completion: nil)
+        viewcontroller.present(imagePicker, animated: true, completion: nil)
         
     }
     

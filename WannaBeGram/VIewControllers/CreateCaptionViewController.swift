@@ -17,15 +17,35 @@ class CreateCaptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.captionField.delegate = self
+        self.capturedImageView.image = image
         // Do any additional setup after loading the view.
         
+        
+        let tapGestureRecongnizer:UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+        self.view.addGestureRecognizer(tapGestureRecongnizer)
+        
+        
+        
+        
+    }
+    
+    //MARK:- Helper Functions
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        if self.captionField.isFirstResponder {
+            self.captionField.resignFirstResponder()
+        }
     }
     
     @IBAction func postButtonPressed(_ sender: UIButton) {
         
     }
     
+    @IBAction func didAttemptEditinigCaption(_ sender: UITextField) {
+    print("here")
+        self.resignFirstResponder()
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -36,4 +56,10 @@ class CreateCaptionViewController: UIViewController {
     }
     */
 
+}
+
+extension CreateCaptionViewController: UITextFieldDelegate {
+    
+    
+    
 }

@@ -19,6 +19,8 @@ class WBGButton: UIButton {
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.cornerRadius = self.bounds.height / 2
+        self.clipsToBounds = true
+    
     }
     
 

@@ -15,15 +15,14 @@
 		A853FD062217ECFE00B02EF2 /* PostActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD052217ECFE00B02EF2 /* PostActionCell.swift */; };
 		A8A40007221A1D6200941E9D /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40006221A1D6200941E9D /* PhotoHelper.swift */; };
 		A8A40009221A280100941E9D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40008221A280100941E9D /* Post.swift */; };
+		A8A4000B221A32A800941E9D /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4000A221A32A800941E9D /* HomeTabBarController.swift */; };
 		A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFF82219C71700941E9D /* WBGButton.swift */; };
-		A8A4FFFB2219C85000941E9D /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */; };
 		A8A4FFFD2219C86300941E9D /* CreateCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */; };
 		A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */; };
 		A8FDEE9A2217BAD900D5CB86 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE992217BAD900D5CB86 /* UserService.swift */; };
 		A8FDEE9C2217BD0A00D5CB86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE9B2217BD0A00D5CB86 /* User.swift */; };
 		A8FDEE9E2217C5BB00D5CB86 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE9D2217C5BB00D5CB86 /* CreateUserViewController.swift */; };
 		A8FE808322123DDF00A17BDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE808222123DDF00A17BDB /* AppDelegate.swift */; };
-		A8FE808522123DDF00A17BDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FE808422123DDF00A17BDB /* ViewController.swift */; };
 		A8FE808822123DDF00A17BDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FE808622123DDF00A17BDB /* Main.storyboard */; };
 		A8FE808D22123DE000A17BDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FE808B22123DE000A17BDB /* LaunchScreen.storyboard */; };
 		A8FE809522123E1F00A17BDB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8FE809422123E1F00A17BDB /* GoogleService-Info.plist */; };
@@ -44,8 +43,8 @@
 		A853FD052217ECFE00B02EF2 /* PostActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActionCell.swift; sourceTree = "<group>"; };
 		A8A40006221A1D6200941E9D /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		A8A40008221A280100941E9D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A8A4000A221A32A800941E9D /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		A8A4FFF82219C71700941E9D /* WBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBGButton.swift; sourceTree = "<group>"; };
-		A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaptionViewController.swift; sourceTree = "<group>"; };
 		A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerHelper.swift; sourceTree = "<group>"; };
 		A8FDEE992217BAD900D5CB86 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -53,7 +52,6 @@
 		A8FDEE9D2217C5BB00D5CB86 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		A8FE807F22123DDF00A17BDB /* WannaBeGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WannaBeGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FE808222123DDF00A17BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A8FE808422123DDF00A17BDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A8FE808722123DDF00A17BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A8FE808C22123DE000A17BDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8FE808E22123DE000A17BDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,10 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				A853FCFB2217D73700B02EF2 /* HomeViewController.swift */,
+				A8A4000A221A32A800941E9D /* HomeTabBarController.swift */,
 				A8FDEE9D2217C5BB00D5CB86 /* CreateUserViewController.swift */,
 				A8FE809C2212436400A17BDB /* LoginViewController.swift */,
-				A8FE808422123DDF00A17BDB /* ViewController.swift */,
-				A8A4FFFA2219C85000941E9D /* CreatePostViewController.swift */,
 				A8A4FFFC2219C86300941E9D /* CreateCaptionViewController.swift */,
 			);
 			path = VIewControllers;
@@ -339,9 +336,8 @@
 			files = (
 				A8FDEE9A2217BAD900D5CB86 /* UserService.swift in Sources */,
 				A8FDEE9E2217C5BB00D5CB86 /* CreateUserViewController.swift in Sources */,
-				A8A4FFFB2219C85000941E9D /* CreatePostViewController.swift in Sources */,
+				A8A4000B221A32A800941E9D /* HomeTabBarController.swift in Sources */,
 				A8FE8097221241E200A17BDB /* Storyboard+Utility.swift in Sources */,
-				A8FE808522123DDF00A17BDB /* ViewController.swift in Sources */,
 				A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */,
 				A8FE809F221245F100A17BDB /* GradientView.swift in Sources */,
 				A8A40007221A1D6200941E9D /* PhotoHelper.swift in Sources */,

@@ -166,13 +166,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="BAP-eB-bP2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="BAP-eB-bP2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="nVx-ry-hi8">
                                 <rect key="frame" x="16" y="89" width="343" height="501"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-is-HeH">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-is-HeH">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="375"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="375" id="v53-7M-nCz"/>
@@ -184,6 +184,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="didAttemptEditinigCaption:" destination="Lkd-Gf-qaW" eventType="editingDidBegin" id="5Oq-YB-nCu"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnf-ml-rX9" customClass="WBGButton" customModule="WannaBeGram" customModuleProvider="target">
                                         <rect key="frame" x="19" y="457" width="305" height="44"/>
@@ -225,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="589.65517241379314"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar Controller-->
         <scene sceneID="wmd-2g-CHc">
             <objects>
-                <tabBarController id="yun-rC-Zd2" sceneMemberID="viewController">
+                <tabBarController id="yun-rC-Zd2" customClass="HomeTabBarController" customModule="WannaBeGram" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bYf-bp-hxi"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7UY-hq-dBz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -237,7 +240,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="sWP-Rh-oXc"/>
-                        <segue destination="M6P-go-hah" kind="relationship" relationship="viewControllers" id="YNn-R5-w5F"/>
+                        <segue destination="M6P-go-hah" kind="relationship" relationship="viewControllers" id="M8H-Sw-GRJ"/>
+                        <segue destination="Lkd-Gf-qaW" kind="show" identifier="toCaptionView" id="gTk-ci-Rs4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNf-v0-lIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,12 +271,12 @@
         <!--Item-->
         <scene sceneID="ZyJ-DW-8PJ">
             <objects>
-                <viewController id="M6P-go-hah" customClass="CreatePostViewController" customModule="WannaBeGram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M6P-go-hah" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qSJ-hc-Zhj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="slk-SQ-lkU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="slk-SQ-lkU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WannaBeGram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-vQ-4Md">
@@ -310,14 +314,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h0j-bP-s2O"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Wmt-s6-DDt"/>
-                    <connections>
-                        <segue destination="Lkd-Gf-qaW" kind="show" identifier="toCaptionView" id="eHE-Rj-K2G"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="Wmt-s6-DDt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJL-HU-g4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242" y="590"/>
+            <point key="canvasLocation" x="-428" y="667"/>
         </scene>
     </scenes>
     <resources>
