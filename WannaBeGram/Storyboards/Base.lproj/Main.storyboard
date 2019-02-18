@@ -63,37 +63,51 @@
                                             <outlet property="usernameLabel" destination="nym-zp-0mW" id="kW2-KE-6hh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postContentCell" rowHeight="375" id="mTF-NM-xfl" customClass="PostContentCell" customModule="WannaBeGram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="375"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postContentCell" rowHeight="427" id="mTF-NM-xfl" customClass="PostContentCell" customModule="WannaBeGram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="427"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mTF-NM-xfl" id="OPR-0Y-I2e">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="426.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQP-T9-Orr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="374.5"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQP-T9-Orr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="369"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="369" id="4nf-Vk-SWn"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxJ-T2-FZb">
+                                                    <rect key="frame" x="15" y="377" width="345" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="345" id="bav-d3-0pS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="wxJ-T2-FZb" firstAttribute="centerX" secondItem="OPR-0Y-I2e" secondAttribute="centerX" id="LT1-yy-R3L"/>
                                                 <constraint firstAttribute="trailing" secondItem="hQP-T9-Orr" secondAttribute="trailing" id="cB5-y6-hWl"/>
-                                                <constraint firstAttribute="bottom" secondItem="hQP-T9-Orr" secondAttribute="bottom" id="cMC-tW-Tfq"/>
                                                 <constraint firstItem="hQP-T9-Orr" firstAttribute="top" secondItem="OPR-0Y-I2e" secondAttribute="top" id="iyx-Iz-GiX"/>
                                                 <constraint firstItem="hQP-T9-Orr" firstAttribute="leading" secondItem="OPR-0Y-I2e" secondAttribute="leading" id="ncy-bF-OaB"/>
+                                                <constraint firstItem="wxJ-T2-FZb" firstAttribute="top" secondItem="hQP-T9-Orr" secondAttribute="bottom" constant="8" id="y3C-km-ac2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="captionLabel" destination="wxJ-T2-FZb" id="su9-wX-kGP"/>
                                             <outlet property="postImageView" destination="hQP-T9-Orr" id="N76-CB-vOe"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postActionCell" rowHeight="64" id="Lr8-yj-q2X" customClass="PostActionCell" customModule="WannaBeGram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="467" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="519" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lr8-yj-q2X" id="BHS-rV-XMi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxW-2Q-Id7">
-                                                    <rect key="frame" x="20" y="12" width="40" height="40"/>
+                                                    <rect key="frame" x="13" y="12" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="AQk-QH-z4T"/>
                                                         <constraint firstAttribute="height" constant="40" id="YWQ-ur-6xG"/>
@@ -101,7 +115,7 @@
                                                     <state key="normal" image="post_like"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-rb-8T6">
-                                                    <rect key="frame" x="70" y="12" width="113" height="40"/>
+                                                    <rect key="frame" x="63" y="12" width="113" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="66b-fE-btN"/>
                                                         <constraint firstAttribute="height" constant="40" id="kDH-3e-JS2"/>
@@ -111,7 +125,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/1111" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS3-m6-dDr">
-                                                    <rect key="frame" x="252" y="12" width="113" height="40"/>
+                                                    <rect key="frame" x="259" y="12" width="113" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="TB6-7b-ycU"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="oZl-eX-oDH"/>
@@ -162,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1518" y="581"/>
+            <point key="canvasLocation" x="-1519.2" y="580.65967016491754"/>
         </scene>
         <!--Create Post View Controller-->
         <scene sceneID="16Q-c3-W9c">

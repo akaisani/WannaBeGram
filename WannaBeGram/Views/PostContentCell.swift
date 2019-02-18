@@ -13,4 +13,5 @@ class PostContentCell: UITableViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
     
+    @IBOutlet weak var captionLabel: UILabel!
 }

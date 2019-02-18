@@ -88,13 +88,15 @@ struct UserService {
     }
     
     static func timeline(completion: @escaping ([Post]) -> Void) {
-        let currentUser = User.current
+//        let currentUser = User.current
         
-        let timelineRef = Database.database().reference().child("timeline").child(currentUser.uid)
+        let timelineRef = Database.database().reference().child("timeline")
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
-            
+            for snap in snapshot {
+                guard let snapshot = snap.children.allObjects as? [DataSnapshot]
+                    else { return completion([]) }
             let dispatchGroup = DispatchGroup()
             
             var posts = [Post]()
@@ -119,7 +121,11 @@ struct UserService {
             dispatchGroup.notify(queue: .main, execute: {
                 completion(posts.reversed())
             })
+        
+            }
+            
         })
+        
     }
     
 }

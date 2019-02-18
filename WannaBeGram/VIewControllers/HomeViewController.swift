@@ -77,16 +77,18 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postHeaderCell", for: indexPath) as! PostHeaderCell
             cell.usernameLabel.text = post.poster.username
+            return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postContentCell", for: indexPath) as! PostContentCell
             cell.postImageView.image = post.image
+            cell.captionLabel.text = post.caption
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postActionCell", for: indexPath) as! PostActionCell
             //TODO: add code for like button
             //TODO: add code for date and like count
             return cell
         }
-        return UITableViewCell()
     }
     
     
@@ -98,7 +100,7 @@ extension HomeViewController: UITableViewDelegate {
             case 0:
                 return 64
             case 1:
-                return 375
+                return 427
             case 2:
                 return 64
                 
