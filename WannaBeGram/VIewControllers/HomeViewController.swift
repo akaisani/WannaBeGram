@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
         
         // add pull to refresh
         refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        refreshControl.tintColor = UIColor.purple
         postsTableView.addSubview(refreshControl)
     }
 
@@ -92,5 +93,19 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: UITableViewDelegate {
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            switch indexPath.section {
+            case 0:
+                return 64
+            case 1:
+                return 375
+            case 2:
+                return 64
+                
+            default:
+                return 0
+            }
+        }
+
     
 }
