@@ -9,13 +9,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WannaBeGram/VIewControllers/CreatePostViewController.swift"
-            timestampString = "572144595.210611"
+            filePath = "WannaBeGram/Services/PostService.swift"
+            timestampString = "572147245.39149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "show(forKey:posterUID:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WannaBeGram/Services/PostService.swift"
+            timestampString = "572147245.391528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "show(forKey:posterUID:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static WannaBeGram.PostService.show(forKey: Swift.String, posterUID: Swift.String, completion: (Swift.Optional&lt;WannaBeGram.Post&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "WannaBeGram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AbidsMac/Documents/Purdue%20Class%20Assisgments/CS490IOS/WannaBeGram/WannaBeGram/Services/PostService.swift"
+                  timestampString = "572147245.645926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "432">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in static WannaBeGram.PostService.show(forKey: Swift.String, posterUID: Swift.String, completion: (Swift.Optional&lt;WannaBeGram.Post&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "WannaBeGram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AbidsMac/Documents/Purdue%20Class%20Assisgments/CS490IOS/WannaBeGram/WannaBeGram/Services/PostService.swift"
+                  timestampString = "572147245.6472631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WannaBeGram/Services/PostService.swift"
+            timestampString = "572147245.3915631"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "show(forKey:posterUID:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,12 +12,41 @@ class HomeViewController: UIViewController {
 
     
     var posts = [Post]()
+    let refreshControl = UIRefreshControl()
+
     
+    @IBOutlet weak var postsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        configureTableView()
+        reloadTimeline()
     }
     
+    
+    @objc func reloadTimeline() {
+        UserService.timeline { (posts) in
+            self.posts = posts
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+            
+            self.postsTableView.reloadData()
+        }
+    }
+    
+    func configureTableView() {
+        // remove separators for empty cells
+        postsTableView.tableFooterView = UIView()
+        
+        // remove separators from cells
+        postsTableView.separatorStyle = .none
+        
+        // add pull to refresh
+        refreshControl.addTarget(self, action: #selector(reloadTimeline), for: .valueChanged)
+        postsTableView.addSubview(refreshControl)
+    }
 
     /*
     // MARK: - Navigation

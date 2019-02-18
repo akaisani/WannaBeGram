@@ -39,6 +39,7 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func postButtonPressed(_ sender: UIButton) {
         PostService.create(for: image, caption: captionField.text!)
+        AlertControllerHelper.presentAlert(for: self, withTitle: "Success!", withMessage: "Your post was created!")
     }
     
     /*

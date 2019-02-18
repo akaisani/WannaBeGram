@@ -153,6 +153,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="hDw-9i-nnF"/>
                     <navigationItem key="navigationItem" title="Home" id="vQh-eZ-qvL"/>
+                    <connections>
+                        <outlet property="postsTableView" destination="5iQ-cx-WR3" id="nuq-ez-mpg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
