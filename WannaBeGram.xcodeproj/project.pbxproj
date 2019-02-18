@@ -16,6 +16,9 @@
 		A8A40007221A1D6200941E9D /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40006221A1D6200941E9D /* PhotoHelper.swift */; };
 		A8A40009221A280100941E9D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40008221A280100941E9D /* Post.swift */; };
 		A8A4000B221A32A800941E9D /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4000A221A32A800941E9D /* HomeTabBarController.swift */; };
+		A8A4000D221A383E00941E9D /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4000C221A383E00941E9D /* PostService.swift */; };
+		A8A4000F221A38D200941E9D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4000E221A38D200941E9D /* StorageService.swift */; };
+		A8A40011221A3A8A00941E9D /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40010221A3A8A00941E9D /* StorageReference+Post.swift */; };
 		A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFF82219C71700941E9D /* WBGButton.swift */; };
 		A8A4FFFD2219C86300941E9D /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFC2219C86300941E9D /* CreatePostViewController.swift */; };
 		A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */; };
@@ -44,6 +47,9 @@
 		A8A40006221A1D6200941E9D /* PhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		A8A40008221A280100941E9D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A8A4000A221A32A800941E9D /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		A8A4000C221A383E00941E9D /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		A8A4000E221A38D200941E9D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		A8A40010221A3A8A00941E9D /* StorageReference+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
 		A8A4FFF82219C71700941E9D /* WBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBGButton.swift; sourceTree = "<group>"; };
 		A8A4FFFC2219C86300941E9D /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerHelper.swift; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 		A8A400002219C8E400941E9D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A8A4000C221A383E00941E9D /* PostService.swift */,
+				A8A4000E221A38D200941E9D /* StorageService.swift */,
 				A8FDEE992217BAD900D5CB86 /* UserService.swift */,
 			);
 			path = Services;
@@ -96,6 +104,7 @@
 		A8A400012219C8EF00941E9D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A8A40010221A3A8A00941E9D /* StorageReference+Post.swift */,
 				A8FE8096221241E200A17BDB /* Storyboard+Utility.swift */,
 			);
 			path = Extensions;
@@ -339,6 +348,7 @@
 				A8A4000B221A32A800941E9D /* HomeTabBarController.swift in Sources */,
 				A8FE8097221241E200A17BDB /* Storyboard+Utility.swift in Sources */,
 				A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */,
+				A8A4000F221A38D200941E9D /* StorageService.swift in Sources */,
 				A8FE809F221245F100A17BDB /* GradientView.swift in Sources */,
 				A8A40007221A1D6200941E9D /* PhotoHelper.swift in Sources */,
 				A8FE808322123DDF00A17BDB /* AppDelegate.swift in Sources */,
@@ -348,6 +358,8 @@
 				A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */,
 				A8FDEE9C2217BD0A00D5CB86 /* User.swift in Sources */,
 				A853FD022217E9DD00B02EF2 /* PostHeaderCell.swift in Sources */,
+				A8A4000D221A383E00941E9D /* PostService.swift in Sources */,
+				A8A40011221A3A8A00941E9D /* StorageReference+Post.swift in Sources */,
 				A8A4FFFD2219C86300941E9D /* CreatePostViewController.swift in Sources */,
 				A8A40009221A280100941E9D /* Post.swift in Sources */,
 				A8FE8099221242AE00A17BDB /* Constants.swift in Sources */,

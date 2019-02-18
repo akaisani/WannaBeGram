@@ -38,7 +38,7 @@ class CreatePostViewController: UIViewController {
     }
     
     @IBAction func postButtonPressed(_ sender: UIButton) {
-        
+        PostService.create(for: image, caption: captionField.text!)
     }
     
     /*
