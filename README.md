@@ -21,4 +21,4 @@ The following **bonus** features are implemented:
 ### App Walkthough GIF
 Note, it may take a couple seconds for the gif to appear may take a couple seconds as the gif file is quite large.
 
-<img src='WannaBeGram.mp4' title='Video Walkthrough Part 1' width=250><br> />
+<img src='WannaBeGram.mp4' title='Video Walkthrough Part 1' width=250><br>
