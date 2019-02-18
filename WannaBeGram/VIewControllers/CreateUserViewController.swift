@@ -16,7 +16,7 @@ class CreateUserViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        usernameField.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -37,6 +37,8 @@ class CreateUserViewController: UIViewController {
                     AlertControllerHelper.presentAlert(for: self, withTitle: "Error!", withMessage: "Could not login user with username: \(username)")
                     return
                 }
+                self.usernameField.resignFirstResponder()
+                
                 let initialVC = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialVC
                 self.view.window?.makeKeyAndVisible()
@@ -57,3 +59,5 @@ class CreateUserViewController: UIViewController {
     */
 
 }
+
+extension CreateUserViewController: UITextFieldDelegate {}

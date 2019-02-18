@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeTabBarController: UITabBarController {
 
@@ -44,6 +45,12 @@ class HomeTabBarController: UITabBarController {
         
     }
 
+    @IBAction func didPressSignOut(_ sender: Any) {
+        UserService.signOut()
+        let initialVC = UIStoryboard.initialViewController(for: .login)
+        self.view.window?.rootViewController = initialVC
+        self.view.window?.makeKeyAndVisible()
+    }
 }
 
 extension HomeTabBarController: UITabBarControllerDelegate {

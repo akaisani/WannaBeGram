@@ -13,11 +13,14 @@ class HomeViewController: UIViewController {
     
     var posts = [Post]()
     let refreshControl = UIRefreshControl()
+    var activityIndicator: UIActivityIndicatorView!
 
     
     @IBOutlet weak var postsTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        startSpinner()
+
         // Do any additional setup after loading the view.
         configureTableView()
         reloadTimeline()
@@ -31,7 +34,7 @@ class HomeViewController: UIViewController {
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
             }
-            
+            if self.activityIndicator.isAnimating {self.stopSpinner()}
             self.postsTableView.reloadData()
         }
     }
@@ -49,6 +52,25 @@ class HomeViewController: UIViewController {
         postsTableView.addSubview(refreshControl)
     }
 
+    
+    
+    // MARK: - UIActivityIndicator Setup
+    func startSpinner() {
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
+        activityIndicator.color = .purple
+        activityIndicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        activityIndicator.hidesWhenStopped = true
+        self.view.addSubview(activityIndicator)
+        activityIndicator.center = self.view.center
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    
+    func stopSpinner() {
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
     /*
     // MARK: - Navigation
 

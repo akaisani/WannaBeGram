@@ -249,7 +249,13 @@
         <scene sceneID="wmd-2g-CHc">
             <objects>
                 <tabBarController id="yun-rC-Zd2" customClass="HomeTabBarController" customModule="WannaBeGram" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="WannaBeGram" id="bYf-bp-hxi"/>
+                    <navigationItem key="navigationItem" title="WannaBeGram" id="bYf-bp-hxi">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="Hcs-YV-Qqi">
+                            <connections>
+                                <action selector="didPressSignOut:" destination="yun-rC-Zd2" id="hvG-q5-uZ3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7UY-hq-dBz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

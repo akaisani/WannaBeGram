@@ -94,12 +94,13 @@ struct UserService {
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
+            var posts = [Post]()
+
             for snap in snapshot {
                 guard let snapshot = snap.children.allObjects as? [DataSnapshot]
                     else { return completion([]) }
             let dispatchGroup = DispatchGroup()
             
-            var posts = [Post]()
             
             for postSnap in snapshot {
                 guard let postDict = postSnap.value as? [String : Any],
@@ -119,13 +120,17 @@ struct UserService {
             }
             
             dispatchGroup.notify(queue: .main, execute: {
-                completion(posts.reversed())
+                completion(posts)
             })
         
             }
             
         })
         
+    }
+    
+    static func signOut() {
+        try! Auth.auth().signOut()
     }
     
 }
