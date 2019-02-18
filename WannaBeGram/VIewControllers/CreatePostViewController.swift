@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateCaptionViewController: UIViewController {
+class CreatePostViewController: UIViewController {
 
     
     @IBOutlet weak var captionField: UITextField!
@@ -41,11 +41,6 @@ class CreateCaptionViewController: UIViewController {
         
     }
     
-    @IBAction func didAttemptEditinigCaption(_ sender: UITextField) {
-    print("here")
-        self.resignFirstResponder()
-        
-    }
     /*
     // MARK: - Navigation
 
@@ -58,8 +53,27 @@ class CreateCaptionViewController: UIViewController {
 
 }
 
-extension CreateCaptionViewController: UITextFieldDelegate {
-    
+extension CreatePostViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        let alertController = UIAlertController(title: "Caption", message: "Enter Caption Text Below", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Caption"
+        }
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let okayAction = UIAlertAction(title: "Done", style: .default) { (action) in
+            guard let textField = alertController.textFields?.first else {return}
+            self.captionField.text = textField.text
+            alertController.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(okayAction)
+        self.present(alertController, animated: true, completion: nil)
+        return false
+    }
     
     
 }

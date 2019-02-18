@@ -158,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="-1518" y="581"/>
         </scene>
-        <!--Create Caption View Controller-->
+        <!--Create Post View Controller-->
         <scene sceneID="16Q-c3-W9c">
             <objects>
-                <viewController id="Lkd-Gf-qaW" customClass="CreateCaptionViewController" customModule="WannaBeGram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Lkd-Gf-qaW" customClass="CreatePostViewController" customModule="WannaBeGram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VqF-e8-rMh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,9 +184,6 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="didAttemptEditinigCaption:" destination="Lkd-Gf-qaW" eventType="editingDidBegin" id="5Oq-YB-nCu"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnf-ml-rX9" customClass="WBGButton" customModule="WannaBeGram" customModuleProvider="target">
                                         <rect key="frame" x="19" y="457" width="305" height="44"/>

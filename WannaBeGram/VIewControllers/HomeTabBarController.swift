@@ -38,7 +38,7 @@ class HomeTabBarController: UITabBarController {
         
         guard let identifier = segue.identifier else {return}
         if identifier == "toCaptionView" {
-            guard let captionVC = segue.destination as? CreateCaptionViewController else {return}
+            guard let captionVC = segue.destination as? CreatePostViewController else {return}
             captionVC.image = self.capturedImage
         }
         
