@@ -39,7 +39,13 @@ class CreatePostViewController: UIViewController {
     
     @IBAction func postButtonPressed(_ sender: UIButton) {
         PostService.create(for: image, caption: captionField.text!)
-        AlertControllerHelper.presentAlert(for: self, withTitle: "Success!", withMessage: "Your post was created!")
+        let alertController = UIAlertController(title: "Success!", message: "Your post was created!", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .default) {(action) in
+            alertController.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(dismissAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     /*
