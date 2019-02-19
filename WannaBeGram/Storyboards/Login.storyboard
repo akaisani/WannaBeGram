@@ -232,12 +232,16 @@
                                     <action selector="didPressRegisterButton:" destination="QwA-Gv-GKC" eventType="touchUpInside" id="Nhs-in-XeS"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_user_profile_photo_placeholder2" translatesAutoresizingMaskIntoConstraints="NO" id="h96-AD-0r0">
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_user_profile_photo_placeholder2" translatesAutoresizingMaskIntoConstraints="NO" id="h96-AD-0r0">
                                 <rect key="frame" x="112.5" y="157" width="150" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="gkJ-h7-pQ4"/>
                                     <constraint firstAttribute="height" constant="150" id="tlT-2f-QLT"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tOa-5G-Muq" appends="YES" id="bW7-fl-rYy"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEs-Sx-Y0r">
                                 <rect key="frame" x="67.5" y="324" width="240" height="36"/>
@@ -275,6 +279,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tqz-RY-XfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tOa-5G-Muq">
+                    <connections>
+                        <action selector="didTapImageView:" destination="QwA-Gv-GKC" id="iAG-1c-txX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1720.8" y="65.217391304347828"/>
         </scene>

@@ -13,16 +13,15 @@ class CreateUserViewController: UIViewController {
     var email: String!
     var password: String!
     
+    let photoHelper = PhotoHelper()
+    
     @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameField.delegate = self
 
-        self.userProfileImageView.clipsToBounds = true
-        self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.bounds.width / 2
-        self.userProfileImageView.layer.borderColor = UIColor.white.cgColor
-        self.userProfileImageView.layer.borderWidth = 2
+        setupImageView()
         
         
         // Do any additional setup after loading the view.
@@ -56,6 +55,23 @@ class CreateUserViewController: UIViewController {
         }
     }
     
+    //MARK: - Helpers
+    
+    
+    func setupImageView() {
+        self.userProfileImageView.clipsToBounds = true
+        self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.bounds.width / 2
+        self.userProfileImageView.layer.borderColor = UIColor.white.cgColor
+        self.userProfileImageView.layer.borderWidth = 2
+
+    }
+    
+    @IBAction func didTapImageView(_ sender: UITapGestureRecognizer) {
+        self.photoHelper.completionHandler = {(image) in
+            self.userProfileImageView.image = image
+        }
+        self.photoHelper.show(for: self)
+    }
     /*
     // MARK: - Navigation
 
