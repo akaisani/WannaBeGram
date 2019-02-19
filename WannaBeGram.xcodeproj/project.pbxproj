@@ -21,6 +21,7 @@
 		A8A40011221A3A8A00941E9D /* StorageReference+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A40010221A3A8A00941E9D /* StorageReference+Post.swift */; };
 		A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFF82219C71700941E9D /* WBGButton.swift */; };
 		A8A4FFFD2219C86300941E9D /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A4FFFC2219C86300941E9D /* CreatePostViewController.swift */; };
+		A8D6BBC3221B7A8B00E341F9 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D6BBC2221B7A8B00E341F9 /* CircleImageView.swift */; };
 		A8FDEE982217BA9900D5CB86 /* AlertControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */; };
 		A8FDEE9A2217BAD900D5CB86 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE992217BAD900D5CB86 /* UserService.swift */; };
 		A8FDEE9C2217BD0A00D5CB86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FDEE9B2217BD0A00D5CB86 /* User.swift */; };
@@ -52,6 +53,7 @@
 		A8A40010221A3A8A00941E9D /* StorageReference+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Post.swift"; sourceTree = "<group>"; };
 		A8A4FFF82219C71700941E9D /* WBGButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBGButton.swift; sourceTree = "<group>"; };
 		A8A4FFFC2219C86300941E9D /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		A8D6BBC2221B7A8B00E341F9 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		A8FDEE972217BA9900D5CB86 /* AlertControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerHelper.swift; sourceTree = "<group>"; };
 		A8FDEE992217BAD900D5CB86 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A8FDEE9B2217BD0A00D5CB86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		A8A4FFFE2219C8C300941E9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8D6BBC2221B7A8B00E341F9 /* CircleImageView.swift */,
 				A8FE809E221245F100A17BDB /* GradientView.swift */,
 				A8A4FFF82219C71700941E9D /* WBGButton.swift */,
 				A853FD052217ECFE00B02EF2 /* PostActionCell.swift */,
@@ -343,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D6BBC3221B7A8B00E341F9 /* CircleImageView.swift in Sources */,
 				A8FDEE9A2217BAD900D5CB86 /* UserService.swift in Sources */,
 				A8FDEE9E2217C5BB00D5CB86 /* CreateUserViewController.swift in Sources */,
 				A8A4000B221A32A800941E9D /* HomeTabBarController.swift in Sources */,

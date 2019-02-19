@@ -13,10 +13,18 @@ class CreateUserViewController: UIViewController {
     var email: String!
     var password: String!
     
+    @IBOutlet weak var userProfileImageView: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameField.delegate = self
+
+        self.userProfileImageView.clipsToBounds = true
+        self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.bounds.width / 2
+        self.userProfileImageView.layer.borderColor = UIColor.white.cgColor
+        self.userProfileImageView.layer.borderWidth = 2
+        
+        
         // Do any additional setup after loading the view.
     }
     
