@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -105,10 +105,13 @@ extension HomeViewController: UITableViewDataSource {
             cell.postImageView.image = post.image
             cell.captionLabel.text = post.caption
             return cell
-        default:
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postActionCell", for: indexPath) as! PostActionCell
             //TODO: add code for like button
             //TODO: add code for date and like count
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "postActionCell", for: indexPath) as! PostCommentsCell
             return cell
         }
     }

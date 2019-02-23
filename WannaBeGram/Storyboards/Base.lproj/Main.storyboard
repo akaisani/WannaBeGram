@@ -99,15 +99,15 @@
                                             <outlet property="postImageView" destination="hQP-T9-Orr" id="N76-CB-vOe"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postActionCell" rowHeight="106" id="Lr8-yj-q2X" customClass="PostActionCell" customModule="WannaBeGram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="519" width="375" height="106"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postActionCell" rowHeight="67" id="Lr8-yj-q2X" customClass="PostActionCell" customModule="WannaBeGram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="519" width="375" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lr8-yj-q2X" id="BHS-rV-XMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxW-2Q-Id7">
-                                                    <rect key="frame" x="20" y="11" width="40" height="40"/>
+                                                    <rect key="frame" x="20" y="13.333333333333336" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="AQk-QH-z4T"/>
                                                         <constraint firstAttribute="height" constant="40" id="YWQ-ur-6xG"/>
@@ -115,7 +115,7 @@
                                                     <state key="normal" image="post_like"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-rb-8T6">
-                                                    <rect key="frame" x="70" y="12" width="113" height="40"/>
+                                                    <rect key="frame" x="70" y="13.333333333333336" width="113" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="66b-fE-btN"/>
                                                         <constraint firstAttribute="height" constant="40" id="kDH-3e-JS2"/>
@@ -125,7 +125,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/1111" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS3-m6-dDr">
-                                                    <rect key="frame" x="252" y="12" width="113" height="40"/>
+                                                    <rect key="frame" x="252" y="13.333333333333336" width="113" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="TB6-7b-ycU"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="oZl-eX-oDH"/>
@@ -138,10 +138,10 @@
                                             <constraints>
                                                 <constraint firstItem="oS3-m6-dDr" firstAttribute="trailing" secondItem="BHS-rV-XMi" secondAttribute="trailingMargin" constant="5" id="9VN-t2-gex"/>
                                                 <constraint firstItem="oS3-m6-dDr" firstAttribute="firstBaseline" secondItem="PG8-rb-8T6" secondAttribute="firstBaseline" id="BMJ-6D-FEW"/>
+                                                <constraint firstItem="PG8-rb-8T6" firstAttribute="centerY" secondItem="BHS-rV-XMi" secondAttribute="centerY" id="Ha0-x8-6eT"/>
+                                                <constraint firstItem="XxW-2Q-Id7" firstAttribute="centerY" secondItem="BHS-rV-XMi" secondAttribute="centerY" id="I8l-98-hQb"/>
                                                 <constraint firstItem="XxW-2Q-Id7" firstAttribute="leading" secondItem="BHS-rV-XMi" secondAttribute="leadingMargin" constant="5" id="Owy-3v-BZe"/>
-                                                <constraint firstItem="XxW-2Q-Id7" firstAttribute="top" secondItem="BHS-rV-XMi" secondAttribute="topMargin" id="Xtp-4E-zVS"/>
                                                 <constraint firstItem="oS3-m6-dDr" firstAttribute="height" secondItem="PG8-rb-8T6" secondAttribute="height" id="deY-ek-hyB"/>
-                                                <constraint firstItem="PG8-rb-8T6" firstAttribute="top" secondItem="BHS-rV-XMi" secondAttribute="topMargin" constant="1" id="e4V-kd-Gbd"/>
                                                 <constraint firstItem="PG8-rb-8T6" firstAttribute="leading" secondItem="XxW-2Q-Id7" secondAttribute="trailing" constant="10" id="iDm-GX-vki"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -151,6 +151,42 @@
                                             <outlet property="likeCountLabel" destination="PG8-rb-8T6" id="faM-yT-nI3"/>
                                             <outlet property="postDateLabel" destination="oS3-m6-dDr" id="mEx-Oq-bJF"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCommentsCell" id="KG8-TX-bqf" customClass="PostCommentsCell" customModule="WannaBeGram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="586" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KG8-TX-bqf" id="7AN-Pj-9lb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpq-FM-UPi">
+                                                    <rect key="frame" x="20" y="7" width="223" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Hhc-Sp-ARI"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="223" id="T77-Jd-hfB"/>
+                                                    </constraints>
+                                                    <state key="normal">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="View all X comments">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.2743724985357282" green="0.27304702752830923" blue="0.27569796954314718" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <font key="NSFont" metaFont="system" size="15"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    <integer key="NSUnderline" value="1"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didPressViewComments:" destination="KG8-TX-bqf" eventType="touchUpInside" id="xYa-qj-GQD"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rpq-FM-UPi" firstAttribute="centerY" secondItem="7AN-Pj-9lb" secondAttribute="centerY" id="3gv-4H-KeD"/>
+                                                <constraint firstItem="rpq-FM-UPi" firstAttribute="leading" secondItem="7AN-Pj-9lb" secondAttribute="leading" constant="20" id="4WK-pZ-qih"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
