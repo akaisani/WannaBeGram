@@ -47,6 +47,7 @@ class Post {
             let likeCount = dict["like_count"] as? Int,
             let userDict = dict["poster"] as? [String : Any],
             let uid = userDict["uid"] as? String,
+            let profileImageURL = userDict["profileImageURL"] as? String,
             let username = userDict["username"] as? String,
             let caption = dict["caption"] as? String
             else { return nil }
@@ -56,7 +57,7 @@ class Post {
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
         self.likeCount = likeCount
         self.caption = caption
-        self.poster = User(uid: uid, username: username)
+        self.poster = User(uid: uid, username: username, profileImageURL: profileImageURL)
     }
     
     var image: UIImage {

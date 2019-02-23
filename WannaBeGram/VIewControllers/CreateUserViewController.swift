@@ -33,7 +33,12 @@ class CreateUserViewController: UIViewController {
             return
         }
         
-        UserService.createUser(withEmail: email, password: password, username: username) { (user) in
+        guard let image = self.userProfileImageView.image else {
+            AlertControllerHelper.presentAlert(for: self, withTitle: "Error!", withMessage: "No user profile image selected!")
+            return
+        }
+        
+        UserService.createUserWithImage(image: image, email: email, password: password, username: username) { (user) in
             guard let _ = user else {
                 AlertControllerHelper.presentAlert(for: self, withTitle: "Error!", withMessage: "Could not create user with username: \(username)")
                 return

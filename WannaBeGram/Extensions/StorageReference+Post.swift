@@ -18,4 +18,11 @@ extension StorageReference {
         
         return Storage.storage().reference().child("images/posts/\(uid)/\(timestamp).jpg")
     }
+    
+    static func newProfileImageReference() -> StorageReference {
+        let uid = User.current.uid
+        let timestamp = dateFormatter.string(from: Date())
+        
+        return Storage.storage().reference().child("images/profileImage/\(uid).jpg")
+    }
 }

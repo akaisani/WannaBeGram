@@ -14,6 +14,7 @@ class User: Codable {
     
     let uid: String
     let username: String
+    let profileImageURL: String
 
     private static var _current: User?
     
@@ -38,17 +39,20 @@ class User: Codable {
 
     // MARK: - Init
     
-    init(uid: String, username: String) {
+    init(uid: String, username: String, profileImageURL: String) {
         self.uid = uid
         self.username = username
+        self.profileImageURL = profileImageURL
     }
     
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String : Any],
-            let username = dict["username"] as? String
+            let username = dict["username"] as? String,
+            let profileImageURL = dict["profileImageURL"] as? String
             else { return nil }
         
         self.uid = snapshot.key
         self.username = username
+        self.profileImageURL = profileImageURL
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 typealias FIRUser = FirebaseAuth.User
 
@@ -27,7 +28,7 @@ struct UserService {
         }
     }
     
-    static func createUser(withEmail email: String, password: String, username: String, completion: @escaping (User?) -> Void) {
+    static func createUser(withEmail email: String, password: String, username: String, profileImageURLString: String, completion: @escaping (User?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
             guard error == nil else {
                 completion(nil)
@@ -42,7 +43,8 @@ struct UserService {
             let database = Database.database().reference().child("users").child(data.user.uid)
             
             let userData = [
-                "username": username
+                "username": username,
+                "profileImageURL": profileImageURLString
             ]
             
             database.setValue(userData, withCompletionBlock: { (error, databaseRef) in
@@ -62,6 +64,18 @@ struct UserService {
                     return
                 })
             })
+        }
+    }
+    
+    static func createUserWithImage(image: UIImage, email: String, password: String, username: String, completion: @escaping (User?) -> Void) {
+        let imageRef = StorageReference.newProfileImageReference()
+        StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
+            guard let downloadURL = downloadURL else {
+                return
+            }
+            
+            let urlString = downloadURL.absoluteString
+            createUser(withEmail: email, password: password, username: username, profileImageURLString: urlString, completion: completion)
         }
     }
     
