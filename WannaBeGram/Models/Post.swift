@@ -34,6 +34,10 @@ class Post {
                 "comments": comments]
     }
     
+    var commentsDict: [String: Any] {
+        return ["comments": self.comments]
+    }
+    
     init(imageURL: String, caption: String, comments: [[String: String]] = [[String: String]]()) {
         self.imageURL = imageURL
         self.creationDate = Date()
