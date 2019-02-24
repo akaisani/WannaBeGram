@@ -71,15 +71,20 @@ class HomeViewController: UIViewController {
         activityIndicator.stopAnimating()
         UIApplication.shared.endIgnoringInteractionEvents()
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        guard let identifier = segue.identifier else {return}
+        if identifier == "toCommentsView" {
+            guard let commentsVC = segue.destination as? CommentsViewController, let indexPath = postsTableView.indexPathForSelectedRow else {return}
+            commentsVC.post = posts[indexPath.section]
+        }
     }
-    */
+    
 
 }
 
@@ -112,6 +117,9 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postActionCell", for: indexPath) as! PostCommentsCell
+            cell.commentViewAction = {
+                self.performSegue(withIdentifier: "toCommentsView", sender: self)
+            }
             return cell
         }
     }

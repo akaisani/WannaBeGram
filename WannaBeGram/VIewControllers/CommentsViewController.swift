@@ -13,6 +13,7 @@ class CommentsViewController: UIViewController {
     
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var commentsTableView: UITableView!
+    var post: Post!
     var shouldShowBar = false
     let commentBar = MessageInputBar()
     override func viewDidLoad() {

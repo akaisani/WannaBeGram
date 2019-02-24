@@ -10,6 +10,9 @@ import UIKit
 
 class PostCommentsCell: UITableViewCell {
 
+    var commentViewAction: (() -> Void)?
+    
     @IBAction func didPressViewComments(_ sender: UIButton) {
+        commentViewAction?()
     }
 }

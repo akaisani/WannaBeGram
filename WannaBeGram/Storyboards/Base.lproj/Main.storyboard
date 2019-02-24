@@ -179,7 +179,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="didPressViewComments:" destination="KG8-TX-bqf" eventType="touchUpInside" id="xYa-qj-GQD"/>
-                                                        <segue destination="Z2a-xz-jbi" kind="show" id="Via-Tu-HlF"/>
+                                                        <segue destination="Z2a-xz-jbi" kind="show" identifier="toCommentsView" id="Via-Tu-HlF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
