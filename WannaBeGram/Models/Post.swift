@@ -17,7 +17,6 @@ class Post {
     let poster: User
     var isLiked = false
     let caption: String
-    var comments: [[String: String]]
     
     var cachedImage: UIImage?
     
@@ -30,21 +29,15 @@ class Post {
                 "created_at" : createdAgo,
                 "like_count" : likeCount,
                 "caption": caption,
-                "poster" : userDict,
-                "comments": comments]
+                "poster" : userDict]
     }
     
-    var commentsDict: [String: Any] {
-        return ["comments": self.comments]
-    }
-    
-    init(imageURL: String, caption: String, comments: [[String: String]] = [[String: String]]()) {
+    init(imageURL: String, caption: String) {
         self.imageURL = imageURL
         self.creationDate = Date()
         self.likeCount = 0
         self.poster = User.current
         self.caption = caption
-        self.comments = comments
     }
     
     init?(snapshot: DataSnapshot) {
@@ -65,7 +58,6 @@ class Post {
         self.creationDate = Date(timeIntervalSince1970: createdAgo)
         self.likeCount = likeCount
         self.caption = caption
-        self.comments = comments
         self.poster = User(uid: uid, username: username, profileImageURL: profileImageURL)
     }
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0187C9C309849B7D8CDF8351 /* Pods_WannaBeGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277944D67FBF861B1BB15022 /* Pods_WannaBeGram.framework */; };
 		A80FD8AD22235CA50071298A /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FD8AC22235CA40071298A /* CommentService.swift */; };
+		A80FD8AF22235FA20071298A /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FD8AE22235FA20071298A /* Comment.swift */; };
 		A853FCFC2217D73700B02EF2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FCFB2217D73700B02EF2 /* HomeViewController.swift */; };
 		A853FD002217E79300B02EF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A853FCFF2217E79300B02EF2 /* Assets.xcassets */; };
 		A853FD022217E9DD00B02EF2 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A853FD012217E9DD00B02EF2 /* PostHeaderCell.swift */; };
@@ -45,6 +46,7 @@
 		277944D67FBF861B1BB15022 /* Pods_WannaBeGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WannaBeGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C91AAFDDCD42E899E318F5 /* Pods-WannaBeGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaBeGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-WannaBeGram/Pods-WannaBeGram.release.xcconfig"; sourceTree = "<group>"; };
 		A80FD8AC22235CA40071298A /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		A80FD8AE22235FA20071298A /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A853FCFB2217D73700B02EF2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A853FCFF2217E79300B02EF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A853FD012217E9DD00B02EF2 /* PostHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		A8A400052219C92100941E9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A80FD8AE22235FA20071298A /* Comment.swift */,
 				A8A40008221A280100941E9D /* Post.swift */,
 				A8FDEE9B2217BD0A00D5CB86 /* User.swift */,
 			);
@@ -376,6 +379,7 @@
 				A8A4FFF92219C71700941E9D /* WBGButton.swift in Sources */,
 				A8FDEE9C2217BD0A00D5CB86 /* User.swift in Sources */,
 				A853FD022217E9DD00B02EF2 /* PostHeaderCell.swift in Sources */,
+				A80FD8AF22235FA20071298A /* Comment.swift in Sources */,
 				A8A4000D221A383E00941E9D /* PostService.swift in Sources */,
 				A8A40011221A3A8A00941E9D /* StorageReference+Post.swift in Sources */,
 				A8A4FFFD2219C86300941E9D /* CreatePostViewController.swift in Sources */,
