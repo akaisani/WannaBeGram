@@ -20,9 +20,6 @@ class CreateUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameField.delegate = self
-
-        setupImageView()
-        
         
         // Do any additional setup after loading the view.
     }
@@ -58,17 +55,6 @@ class CreateUserViewController: UIViewController {
             
             
         }
-    }
-    
-    //MARK: - Helpers
-    
-    
-    func setupImageView() {
-        self.userProfileImageView.clipsToBounds = true
-        self.userProfileImageView.layer.cornerRadius = self.userProfileImageView.bounds.width / 2
-        self.userProfileImageView.layer.borderColor = UIColor.white.cgColor
-        self.userProfileImageView.layer.borderWidth = 2
-
     }
     
     @IBAction func didTapImageView(_ sender: UITapGestureRecognizer) {

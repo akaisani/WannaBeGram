@@ -14,11 +14,12 @@ class HomeViewController: UIViewController {
     var posts = [Post]()
     let refreshControl = UIRefreshControl()
     var activityIndicator: UIActivityIndicatorView!
-    var selectedPost: Post?
+    var selectedPostIndex: Int?
+    var reloadRow = false
     
     @IBOutlet weak var postsTableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         startSpinner()
 
         // Do any additional setup after loading the view.
@@ -80,8 +81,8 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
         guard let identifier = segue.identifier else {return}
         if identifier == "toCommentsView" {
-            guard let commentsVC = segue.destination as? CommentsViewController, let selectedPost = selectedPost else {return}
-            commentsVC.post = selectedPost
+            guard let commentsVC = segue.destination as? CommentsViewController, let selectedPostIndex = selectedPostIndex else {return}
+            commentsVC.post = self.posts[selectedPostIndex]
         }
     }
     
@@ -104,6 +105,7 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postHeaderCell", for: indexPath) as! PostHeaderCell
             cell.usernameLabel.text = post.poster.username
+            cell.userProfileImageView.image = post.userProfileImage
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "postContentCell", for: indexPath) as! PostContentCell
@@ -123,9 +125,9 @@ extension HomeViewController: UITableViewDataSource {
             attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont(name: "System Font Regular", size: 16.0)!, range: textRange)
             attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.lightGray, range: textRange)
             attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: textRange)
-            cell.viewCommentsButton.titleLabel?.attributedText = attributedText
+            cell.viewCommentsButton.setAttributedTitle(attributedText, for: .normal)
             cell.commentViewAction = { [unowned self] in
-                self.selectedPost = post
+                self.selectedPostIndex = indexPath.section
                 self.performSegue(withIdentifier: "toCommentsView", sender: self)
             }
             return cell
@@ -146,6 +148,4 @@ extension HomeViewController: UITableViewDelegate {
                 return 64
             }
         }
-
-    
 }

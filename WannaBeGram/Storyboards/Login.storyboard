@@ -232,7 +232,7 @@
                                     <action selector="didPressRegisterButton:" destination="QwA-Gv-GKC" eventType="touchUpInside" id="Nhs-in-XeS"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_user_profile_photo_placeholder2" translatesAutoresizingMaskIntoConstraints="NO" id="h96-AD-0r0" customClass="CircleImageView" customModule="WannaBeGram" customModuleProvider="target">
+                            <imageView contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_user_profile_photo_placeholder2" translatesAutoresizingMaskIntoConstraints="NO" id="h96-AD-0r0" customClass="CircleImageView" customModule="WannaBeGram" customModuleProvider="target">
                                 <rect key="frame" x="112.5" y="157" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>

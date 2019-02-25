@@ -10,6 +10,7 @@ import UIKit
 
 class PostHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var userProfileImageView: CircleImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var optionsButton: UIButton!
     override func draw(_ rect: CGRect) {
