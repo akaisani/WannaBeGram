@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     
     var posts = [Post]()
     let refreshControl = UIRefreshControl()
@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startSpinner()
-
+        
         // Do any additional setup after loading the view.
         configureTableView()
         reloadTimeline()
@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
         refreshControl.tintColor = UIColor.purple
         postsTableView.addSubview(refreshControl)
     }
-
+    
     
     
     // MARK: - UIActivityIndicator Setup
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -86,7 +86,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -140,12 +140,16 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: UITableViewDelegate {
-        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            switch indexPath.row {
-            case 1:
-                return 427
-            default:
-                return 64
-            }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 1:
+            return 427
+        default:
+            return 64
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
