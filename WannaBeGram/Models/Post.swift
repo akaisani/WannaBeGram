@@ -49,8 +49,7 @@ class Post {
             let uid = userDict["uid"] as? String,
             let profileImageURL = userDict["profileImageURL"] as? String,
             let username = userDict["username"] as? String,
-            let caption = dict["caption"] as? String,
-            let comments = dict["comments"] as? [[String: String]]
+            let caption = dict["caption"] as? String
             else { return nil }
         
         self.key = snapshot.key

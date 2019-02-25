@@ -9,11 +9,11 @@
 import Foundation
 import FirebaseDatabase
 
-struct Comment {
+class Comment {
     
     let text: String
     let username: String
-    let userProfileImageURL: String
+    private let userProfileImageURL: String
     var key: String?
     
     init(text: String, username: String, userProfileImageURL: String) {
@@ -22,9 +22,9 @@ struct Comment {
         self.userProfileImageURL = userProfileImageURL
     }
     
-    var cachedUserImage: UIImage?
+    private var cachedUserImage: UIImage?
     
-    var commentDict: [String: Any] {
+    var dictValue: [String: Any] {
         
         return [
             "text": self.text,
@@ -53,8 +53,9 @@ struct Comment {
         else {
             let url = URL(string: userProfileImageURL)!
             let data = try! Data(contentsOf: url)
-            cachedUserImage = UIImage(data: data)
-            return cachedUserImage!
+            let image = UIImage(data: data)
+            cachedUserImage = image
+            return image!
         }
     }
     

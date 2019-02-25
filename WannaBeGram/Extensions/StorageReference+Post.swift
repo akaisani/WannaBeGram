@@ -21,7 +21,7 @@ extension StorageReference {
     
     static func newProfileImageReference() -> StorageReference {
         let uid = User.current.uid
-        let timestamp = dateFormatter.string(from: Date())
+//        let timestamp = dateFormatter.string(from: Date())
         
         return Storage.storage().reference().child("images/profileImage/\(uid).jpg")
     }

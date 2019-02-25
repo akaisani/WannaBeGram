@@ -10,22 +10,64 @@ import Foundation
 import FirebaseDatabase
 
 struct CommentService {
-    func makeComment(_ comment: String, for post: Post, completion: @escaping (Post?) -> Void) {
-        let commentDict = [post.poster.uid: comment]
-        post.comments.append(commentDict)
-        guard let key = post.key else {return}
-        let databaseRef = Database.database().reference().child("posts").child(key)
-    
+    static func makeComment(_ comment: String, for post: Post, completion: @escaping (Comment?) -> Void) {
+        guard let postKey = post.key else {return}
         
-        databaseRef.updateChildValues(post.commentsDict) { (error, reference) in
-            if error != nil {
+        let databaseRef = Database.database().reference().child("comments").child(postKey).childByAutoId()
+        
+        
+        let newComment = Comment(text: comment, username: post.poster.username, userProfileImageURL: post.poster.profileImageURL)
+        
+        databaseRef.setValue(newComment.dictValue) { (error, reference) in
+            if let _ = error {
                 completion(nil)
             } else {
-                PostService.show(forKey: key, posterUID: post.poster.uid, completion: { (updatedPost) in
-                    completion(updatedPost)
+                reference.observeSingleEvent(of: .value, with: { (snapshot) in
+                    guard let comment = Comment(snapshot: snapshot) else {completion(nil);return;}
+                    completion(comment)
                 })
+                
             }
         }
         
     }
+    
+    static func getCommentsForPost(_ post: Post, completion: @escaping ([Comment]?) -> Void) {
+        guard let postKey = post.key else {return}
+        var comments = [Comment]()
+        
+        let databaseRef = Database.database().reference().child("comments").child(postKey)
+        
+        databaseRef.observeSingleEvent(of: .value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
+                else { return completion(comments) }
+            
+            let dispatchGroup = DispatchGroup()
+            
+            for commentSnap in snapshot {
+                guard let comment = Comment(snapshot: commentSnap) else {continue}
+                dispatchGroup.enter()
+                
+                _ = comment.userProfileImage
+                comments.append(comment)
+
+                dispatchGroup.leave()
+                
+                
+                
+            }
+            
+            dispatchGroup.notify(queue: .main, execute: {
+                
+                completion(comments)
+                
+            })
+            
+            
+        }
+        
+    }
+    
+    
+    
 }
