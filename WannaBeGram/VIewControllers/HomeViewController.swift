@@ -18,15 +18,13 @@ class HomeViewController: UIViewController {
     var reloadRow = false
     
     @IBOutlet weak var postsTableView: UITableView!
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
         startSpinner()
         
         // Do any additional setup after loading the view.
         configureTableView()
         reloadTimeline()
     }
-    
     
     @objc func reloadTimeline() {
         UserService.timeline { (posts) in
