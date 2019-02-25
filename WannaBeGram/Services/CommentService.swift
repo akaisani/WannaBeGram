@@ -24,7 +24,16 @@ struct CommentService {
             } else {
                 reference.observeSingleEvent(of: .value, with: { (snapshot) in
                     guard let comment = Comment(snapshot: snapshot) else {completion(nil);return;}
-                    completion(comment)
+                    
+                    let postRef = Database.database().reference().child("posts").child(post.poster.uid).child(postKey)
+                    
+                    postRef.setValue(["commentsCount"], withCompletionBlock: { (error, reference) in
+                        if let _ = error {
+                            completion(nil)
+                        } else {
+                            completion(comment)
+                        }
+                    })
                 })
                 
             }
