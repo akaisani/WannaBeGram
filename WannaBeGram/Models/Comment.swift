@@ -38,7 +38,7 @@ class Comment {
         guard let dict = snapshot.value as? [String : Any],
             let username = dict["username"] as? String,
             let userProfileImageURL = dict["userProfileImageURL"] as? String,
-            let text = dict["userProfileImageURL"] as? String
+            let text = dict["text"] as? String
             else { return nil }
         
         self.key = snapshot.key

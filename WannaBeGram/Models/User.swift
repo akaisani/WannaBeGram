@@ -17,7 +17,7 @@ class User: Codable {
     let profileImageURL: String
 
     private static var _current: User?
-    
+        
     static var current: User {
         guard let currentUser = _current else {
             fatalError("Error: current user doesn't exist")
@@ -55,4 +55,5 @@ class User: Codable {
         self.username = username
         self.profileImageURL = profileImageURL
     }
+    
 }

@@ -21,10 +21,13 @@ class Post {
     
     var cachedImage: UIImage?
     
+    private var cachedUserImage: UIImage?
+    
     var dictValue: [String : Any] {
         let createdAgo = creationDate.timeIntervalSince1970
         let userDict = ["uid" : poster.uid,
-                        "username" : poster.username]
+                        "username" : poster.username,
+                        "profileImageURL": poster.profileImageURL]
         
         return ["image_url" : imageURL,
                 "created_at" : createdAgo,
@@ -77,4 +80,15 @@ class Post {
         return cachedImage!
     }
     
+    
+    var userProfileImage: UIImage {
+        if let image = cachedUserImage {return image}
+        else {
+            let url = URL(string: poster.profileImageURL)!
+            let data = try! Data(contentsOf: url)
+            let image = UIImage(data: data)
+            cachedUserImage = image
+            return image!
+        }
+    }
 }

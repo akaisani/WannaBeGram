@@ -6,63 +6,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WannaBeGram/Services/PostService.swift"
-            timestampString = "572154751.151664"
+            filePath = "WannaBeGram/Services/UserService.swift"
+            timestampString = "572761003.926971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "show(forKey:posterUID:completion:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "createUser(withEmail:password:username:profileImage:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WannaBeGram/Services/PostService.swift"
-            timestampString = "572154751.151714"
+            filePath = "WannaBeGram/Services/UserService.swift"
+            timestampString = "572761003.927048"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "show(forKey:posterUID:completion:)"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "createUser(withEmail:password:username:profileImage:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WannaBeGram/Services/StorageService.swift"
+            timestampString = "572761003.927111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "uploadImage(_:at:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static WannaBeGram.PostService.show(forKey: Swift.String, posterUID: Swift.String, completion: (Swift.Optional&lt;WannaBeGram.Post&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "static WannaBeGram.StorageService.uploadImage(_: __C.UIImage, at: __C.FIRStorageReference, completion: (Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "WannaBeGram"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/AbidsMac/Documents/Purdue%20Class%20Assisgments/CS490IOS/WannaBeGram/WannaBeGram/Services/PostService.swift"
-                  timestampString = "572147245.645926"
+                  urlString = "file:///Users/AbidsMac/Documents/Purdue%20Class%20Assisgments/CS490IOS/WannaBeGram/WannaBeGram/Services/StorageService.swift"
+                  timestampString = "572761004.068347"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "432">
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "469">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in static WannaBeGram.PostService.show(forKey: Swift.String, posterUID: Swift.String, completion: (Swift.Optional&lt;WannaBeGram.Post&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRStorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static WannaBeGram.StorageService.uploadImage(_: __C.UIImage, at: __C.FIRStorageReference, completion: (Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "WannaBeGram"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/AbidsMac/Documents/Purdue%20Class%20Assisgments/CS490IOS/WannaBeGram/WannaBeGram/Services/PostService.swift"
-                  timestampString = "572147245.6472631"
+                  urlString = "file:///Users/AbidsMac/Documents/Purdue%20Class%20Assisgments/CS490IOS/WannaBeGram/WannaBeGram/Services/StorageService.swift"
+                  timestampString = "572761004.069693"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "40">
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "65">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -70,16 +86,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WannaBeGram/Services/PostService.swift"
-            timestampString = "572154751.151749"
+            filePath = "WannaBeGram/Services/StorageService.swift"
+            timestampString = "572761003.927156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "show(forKey:posterUID:completion:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "uploadImage(_:at:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

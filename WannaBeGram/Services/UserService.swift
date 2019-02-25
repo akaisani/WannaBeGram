@@ -28,54 +28,54 @@ struct UserService {
         }
     }
     
-    static func createUser(withEmail email: String, password: String, username: String, profileImageURLString: String, completion: @escaping (User?) -> Void) {
+    static func createUser(withEmail email: String, password: String, username: String, profileImage: UIImage, completion: @escaping (User?, String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (data, error) in
             guard error == nil else {
-                completion(nil)
+                completion(nil, error!.localizedDescription)
                 return
             }
-
+            
             guard let data = data else {
-                completion(nil)
+                completion(nil, "User data could not be created!")
                 return
             }
-
+            
+            
+            
             let database = Database.database().reference().child("users").child(data.user.uid)
             
-            let userData = [
-                "username": username,
-                "profileImageURL": profileImageURLString
-            ]
-            
-            database.setValue(userData, withCompletionBlock: { (error, databaseRef) in
-                guard error == nil else {
-                    completion(nil)
+            let imageRef = StorageReference.newProfileImageReference(usingUID: data.user.uid)
+            StorageService.uploadImage(profileImage, at: imageRef) { (downloadURL) in
+                guard let downloadURL = downloadURL else {
                     return
                 }
                 
-                databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                    guard let user = User(snapshot: snapshot) else {
-                        completion(nil)
+                let urlString = downloadURL.absoluteString
+                
+                
+                let userData = [
+                    "username": username,
+                    "profileImageURL": urlString
+                ]
+                
+                database.setValue(userData, withCompletionBlock: { (error, databaseRef) in
+                    guard error == nil else {
+                        completion(nil, "Could not write user data to database, please try again!")
                         return
                     }
                     
-                    User.setCurrent(user)
-                    completion(user)
-                    return
+                    databaseRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                        guard let user = User(snapshot: snapshot) else {
+                            completion(nil, "Error Fetching data for newly created user!")
+                            return
+                        }
+                        
+                        User.setCurrent(user)
+                        completion(user, nil)
+                        return
+                    })
                 })
-            })
-        }
-    }
-    
-    static func createUserWithImage(image: UIImage, email: String, password: String, username: String, completion: @escaping (User?) -> Void) {
-        let imageRef = StorageReference.newProfileImageReference()
-        StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
-            guard let downloadURL = downloadURL else {
-                return
             }
-            
-            let urlString = downloadURL.absoluteString
-            createUser(withEmail: email, password: password, username: username, profileImageURLString: urlString, completion: completion)
         }
     }
     
@@ -102,41 +102,44 @@ struct UserService {
     }
     
     static func timeline(completion: @escaping ([Post]) -> Void) {
-//        let currentUser = User.current
+        //        let currentUser = User.current
         
         let timelineRef = Database.database().reference().child("timeline")
         timelineRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
                 else { return completion([]) }
             var posts = [Post]()
-
+            
+            guard snapshot.count > 0 else {return completion([])}
+            
             for snap in snapshot {
                 guard let snapshot = snap.children.allObjects as? [DataSnapshot]
                     else { return completion([]) }
-            let dispatchGroup = DispatchGroup()
-            
-            
-            for postSnap in snapshot {
-                guard let postDict = postSnap.value as? [String : Any],
-                    let posterUID = postDict["poster_uid"] as? String
-                    else { continue }
+                let dispatchGroup = DispatchGroup()
                 
-                dispatchGroup.enter()
                 
-                PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
-                    if let post = post {
-                        _ = post.image
-                        posts.append(post)
-                    }
+                for postSnap in snapshot {
+                    guard let postDict = postSnap.value as? [String : Any],
+                        let posterUID = postDict["poster_uid"] as? String
+                        else { continue }
                     
-                    dispatchGroup.leave()
+                    dispatchGroup.enter()
+                    
+                    PostService.show(forKey: postSnap.key, posterUID: posterUID) { (post) in
+                        if let post = post {
+                            _ = post.image
+                            _ = post.userProfileImage
+                            posts.append(post)
+                        }
+                        
+                        dispatchGroup.leave()
+                    }
                 }
-            }
-            
-            dispatchGroup.notify(queue: .main, execute: {
-                completion(posts)
-            })
-        
+                
+                dispatchGroup.notify(queue: .main, execute: {
+                    completion(posts)
+                })
+                
             }
             
         })

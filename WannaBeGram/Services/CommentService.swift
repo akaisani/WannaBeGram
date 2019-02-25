@@ -16,7 +16,7 @@ struct CommentService {
         let databaseRef = Database.database().reference().child("comments").child(postKey).childByAutoId()
         
         
-        let newComment = Comment(text: comment, username: post.poster.username, userProfileImageURL: post.poster.profileImageURL)
+        let newComment = Comment(text: comment, username: User.current.username, userProfileImageURL: User.current.profileImageURL)
         
         databaseRef.setValue(newComment.dictValue) { (error, reference) in
             if let _ = error {
@@ -25,9 +25,9 @@ struct CommentService {
                 reference.observeSingleEvent(of: .value, with: { (snapshot) in
                     guard let comment = Comment(snapshot: snapshot) else {completion(nil);return;}
                     
-                    let postRef = Database.database().reference().child("posts").child(post.poster.uid).child(postKey)
+                    let postRef = Database.database().reference().child("posts").child(post.poster.uid).child(postKey).child("commentsCount")
                     
-                    postRef.setValue(["commentsCount"], withCompletionBlock: { (error, reference) in
+                    postRef.setValue(post.commentsCount + 1, withCompletionBlock: { (error, reference) in
                         if let _ = error {
                             completion(nil)
                         } else {

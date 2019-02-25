@@ -44,6 +44,7 @@ class PhotoHelper: NSObject {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = type
         imagePicker.delegate = self
+        imagePicker.allowsEditing = true
         
         viewcontroller.present(imagePicker, animated: true, completion: nil)
         

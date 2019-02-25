@@ -17,6 +17,7 @@ class CommentsViewController: UIViewController {
     var shouldShowBar = false
     let commentBar = MessageInputBar()
     var comments = [Comment]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         commentBar.inputTextView.placeholder = "Add a comment..."
@@ -24,7 +25,7 @@ class CommentsViewController: UIViewController {
         commentBar.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(CommentsViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-
+        
         
         // Do any additional setup after loading the view.
         
@@ -57,6 +58,10 @@ class CommentsViewController: UIViewController {
     override var inputAccessoryView: UIView? {
         return commentBar
     }
+    
+    override func becomeFirstResponder() -> Bool {
+        return shouldShowBar
+    }
 }
 
 
@@ -67,6 +72,11 @@ extension CommentsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentCell
+        let comment = comments[indexPath.row]
+        cell.usernameLabel.text = comment.username
+        cell.profileImageView.image = comment.userProfileImage
+        cell.profileImageView.backgroundColor = .black
+        cell.commentLabel.text = comment.text
         return cell
     }
 }
@@ -80,18 +90,25 @@ extension CommentsViewController: UITableViewDelegate {
 extension CommentsViewController: MessageInputBarDelegate {
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
-        shouldShowBar = false
+        self.shouldShowBar = false
+        
         inputBar.inputTextView.resignFirstResponder()
-        
-        guard inputBar.inputTextView.text.count > 0 else {return}
-        
-        CommentService.makeComment(inputBar.inputTextView.text, for: post) { (comment) in
-            guard let comment = comment else {return}
-            self.comments.append(comment)
-            let indexPaths = [IndexPath(row: self.comments.count - 1, section: 1)]
-            self.commentsTableView.insertRows(at: indexPaths, with: .fade)
-        }
+        guard inputBar.inputTextView.text.count > 0 else {
 
+            return
+            
+        }
+        
+        CommentService.makeComment(inputBar.inputTextView.text, for: post) {[unowned self] (comment) in
+            guard let comment = comment else {return}
+            DispatchQueue.main.async {
+                
+                self.comments.append(comment)
+                inputBar.resignFirstResponder()
+                self.commentsTableView.reloadData()
+            }
+        }
+        
     }
     
     

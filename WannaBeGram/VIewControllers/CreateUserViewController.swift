@@ -38,9 +38,9 @@ class CreateUserViewController: UIViewController {
             return
         }
         
-        UserService.createUserWithImage(image: image, email: email, password: password, username: username) { (user) in
+        UserService.createUser(withEmail: email, password: password, username: username, profileImage: image) { (user, errorString) in
             guard let _ = user else {
-                AlertControllerHelper.presentAlert(for: self, withTitle: "Error!", withMessage: "Could not create user with username: \(username)")
+                AlertControllerHelper.presentAlert(for: self, withTitle: "Error!", withMessage: "Could not create user with username: \(username)\n\(errorString!)")
                 return
             }
             
@@ -89,4 +89,10 @@ class CreateUserViewController: UIViewController {
 
 }
 
-extension CreateUserViewController: UITextFieldDelegate {}
+extension CreateUserViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+}

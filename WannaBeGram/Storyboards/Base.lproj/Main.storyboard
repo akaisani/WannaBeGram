@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z2a-xz-jbi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fse-h7-gcR">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -152,7 +152,7 @@
                                             <outlet property="postDateLabel" destination="oS3-m6-dDr" id="mEx-Oq-bJF"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCommentsCell" id="KG8-TX-bqf" customClass="PostCommentsCell" customModule="WannaBeGram" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCommentsCell" rowHeight="44" id="KG8-TX-bqf" customClass="PostCommentsCell" customModule="WannaBeGram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="586" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KG8-TX-bqf" id="7AN-Pj-9lb">
@@ -166,20 +166,10 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="223" id="T77-Jd-hfB"/>
                                                     </constraints>
                                                     <state key="normal">
-                                                        <attributedString key="attributedTitle">
-                                                            <fragment content="View all X comments">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="0.2743724985357282" green="0.27304702752830923" blue="0.27569796954314718" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    <font key="NSFont" metaFont="system" size="15"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    <integer key="NSUnderline" value="1"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
+                                                        <attributedString key="attributedTitle"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="didPressViewComments:" destination="KG8-TX-bqf" eventType="touchUpInside" id="xYa-qj-GQD"/>
-                                                        <segue destination="Z2a-xz-jbi" kind="show" identifier="toCommentsView" id="Via-Tu-HlF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -188,6 +178,9 @@
                                                 <constraint firstItem="rpq-FM-UPi" firstAttribute="leading" secondItem="7AN-Pj-9lb" secondAttribute="leading" constant="20" id="4WK-pZ-qih"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="viewCommentsButton" destination="rpq-FM-UPi" id="cGz-qZ-3lF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -209,6 +202,7 @@
                     <navigationItem key="navigationItem" title="Home" id="vQh-eZ-qvL"/>
                     <connections>
                         <outlet property="postsTableView" destination="5iQ-cx-WR3" id="nuq-ez-mpg"/>
+                        <segue destination="Z2a-xz-jbi" kind="show" identifier="toCommentsView" id="0Tf-7Z-JeA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -262,7 +256,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="142.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-e5-Ya7" customClass="CircleImageView" customModule="WannaBeGram" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-e5-Ya7" customClass="CircleImageView" customModule="WannaBeGram" customModuleProvider="target">
                                                     <rect key="frame" x="5" y="39.333333333333343" width="64" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="64" id="KuK-5l-QDJ"/>
@@ -334,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPJ-cO-2Il" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1524" y="1297.536945812808"/>
+            <point key="canvasLocation" x="-1519" y="1325"/>
         </scene>
         <!--Create Post View Controller-->
         <scene sceneID="16Q-c3-W9c">
