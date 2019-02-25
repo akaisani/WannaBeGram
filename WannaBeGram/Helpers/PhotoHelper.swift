@@ -58,7 +58,7 @@ class PhotoHelper: NSObject {
 extension PhotoHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {picker.dismiss(animated: true, completion: nil);return}
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {picker.dismiss(animated: true, completion: nil);return}
         completionHandler?(image)
         picker.dismiss(animated: true, completion: nil)
     }
