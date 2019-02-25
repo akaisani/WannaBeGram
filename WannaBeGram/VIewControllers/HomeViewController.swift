@@ -140,16 +140,10 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             switch indexPath.row {
-            case 0:
-                return 64
             case 1:
                 return 427
-            case 2:
-                return 64
-            case 3:
-                return 64
             default:
-                return 0
+                return 64
             }
         }
 
