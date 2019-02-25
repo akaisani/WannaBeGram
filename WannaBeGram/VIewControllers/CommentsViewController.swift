@@ -16,6 +16,7 @@ class CommentsViewController: UIViewController {
     var post: Post!
     var shouldShowBar = false
     let commentBar = MessageInputBar()
+    var comments = [Comment]()
     override func viewDidLoad() {
         super.viewDidLoad()
         commentBar.inputTextView.placeholder = "Add a comment..."
@@ -26,6 +27,14 @@ class CommentsViewController: UIViewController {
 
         
         // Do any additional setup after loading the view.
+        
+        CommentService.getCommentsForPost(post) { (comments) in
+            guard let comments = comments else {return}
+            self.comments = comments
+            self.commentsTableView.reloadData()
+        }
+        
+        
     }
     
     
@@ -52,11 +61,8 @@ class CommentsViewController: UIViewController {
 
 
 extension CommentsViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,10 +80,18 @@ extension CommentsViewController: UITableViewDelegate {
 extension CommentsViewController: MessageInputBarDelegate {
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
-        
-        self.commentField.text = inputBar.inputTextView.text
         shouldShowBar = false
         inputBar.inputTextView.resignFirstResponder()
+        
+        guard inputBar.inputTextView.text.count > 0 else {return}
+        
+        CommentService.makeComment(inputBar.inputTextView.text, for: post) { (comment) in
+            guard let comment = comment else {return}
+            self.comments.append(comment)
+            let indexPaths = [IndexPath(row: self.comments.count - 1, section: 1)]
+            self.commentsTableView.insertRows(at: indexPaths, with: .fade)
+        }
+
     }
     
     

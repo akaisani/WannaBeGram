@@ -59,9 +59,7 @@ extension AppDelegate {
             User.setCurrent(user)
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {
-            initialViewController = UIStoryboard.initialViewController(for: .main)
-
-//            initialViewController = UIStoryboard.initialViewController(for: .login)
+            initialViewController = UIStoryboard.initialViewController(for: .login)
         }
         
         window?.rootViewController = initialViewController
