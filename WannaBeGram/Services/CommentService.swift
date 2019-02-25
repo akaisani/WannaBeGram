@@ -13,7 +13,7 @@ struct CommentService {
     static func makeComment(_ comment: String, for post: Post, completion: @escaping (Comment?) -> Void) {
         guard let postKey = post.key else {return}
         
-        let databaseRef = Database.database().reference().child("comments").child(postKey).childByAutoId()
+        let databaseRef = Database.database().reference().child("comments").child(post.poster.uid).child(postKey).childByAutoId()
         
         
         let newComment = Comment(text: comment, username: User.current.username, userProfileImageURL: User.current.profileImageURL)
@@ -45,7 +45,7 @@ struct CommentService {
         guard let postKey = post.key else {return}
         var comments = [Comment]()
         
-        let databaseRef = Database.database().reference().child("comments").child(postKey)
+        let databaseRef = Database.database().reference().child("comments").child(post.poster.uid).child(postKey)
         
         databaseRef.observeSingleEvent(of: .value) { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot]
